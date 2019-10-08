@@ -1,0 +1,319 @@
+1570452760,,ui,say,==> amazon-ebs: Prevalidating AMI Name: ubuntugolden-image-2019-10-07T1252
+1570452761,,ui,message,    amazon-ebs: Found Image ID: ami-0ed5b458acc1b64de
+1570452761,,ui,say,==> amazon-ebs: Creating temporary keypair: packer_5d9b3516-e970-7a84-67c4-ab5665383cd3
+1570452762,,ui,say,==> amazon-ebs: Creating temporary security group for this instance: packer_5d9b351a-ac2e-a238-c44e-22fff14a0b71
+1570452763,,ui,say,==> amazon-ebs: Authorizing access to port 22 from [0.0.0.0/0] in the temporary security groups...
+1570452763,,ui,say,==> amazon-ebs: Launching a source AWS instance...
+1570452763,,ui,say,==> amazon-ebs: Adding tags to source instance
+1570452763,,ui,message,    amazon-ebs: Adding tag: "Name": "Packer Builder"
+1570452764,,ui,message,    amazon-ebs: Instance ID: i-094d3997e880ea367
+1570452764,,ui,say,==> amazon-ebs: Waiting for instance (i-094d3997e880ea367) to become ready...
+1570452796,,ui,say,==> amazon-ebs: Using ssh communicator to connect: 54.171.237.124
+1570452796,,ui,say,==> amazon-ebs: Waiting for SSH to become available...
+1570452814,,ui,say,==> amazon-ebs: Connected to SSH!
+1570452814,,ui,say,==> amazon-ebs: Provisioning with shell script: /var/folders/fz/cfw_yvv52lq955y6bn8bdbc00000gn/T/packer-shell424868735
+1570452815,,ui,say,==> amazon-ebs: Provisioning with shell script: ./provisioners/scripts/bootstrap.sh
+1570452815,,ui,error,==> amazon-ebs: + export DEBIAN_FRONTEND=noninteractive
+1570452815,,ui,error,==> amazon-ebs: + DEBIAN_FRONTEND=noninteractive
+1570452815,,ui,error,==> amazon-ebs: + sudo -s --
+1570452818,,ui,message,    amazon-ebs: Reading package lists...
+1570452818,,ui,message,    amazon-ebs: Building dependency tree...
+1570452818,,ui,message,    amazon-ebs: Reading state information...
+1570452818,,ui,message,    amazon-ebs: software-properties-common is already the newest version (0.96.24.32.11).
+1570452818,,ui,message,    amazon-ebs: software-properties-common set to manually installed.
+1570452818,,ui,message,    amazon-ebs: 0 upgraded%!(PACKER_COMMA) 0 newly installed%!(PACKER_COMMA) 0 to remove and 0 not upgraded.
+1570452819,,ui,message,    amazon-ebs: Hit:1 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+1570452819,,ui,message,    amazon-ebs: Get:2 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+1570452819,,ui,message,    amazon-ebs: Get:3 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+1570452819,,ui,message,    amazon-ebs: Get:4 http://ppa.launchpad.net/ansible/ansible/ubuntu bionic InRelease [15.9 kB]
+1570452819,,ui,message,    amazon-ebs: Get:5 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
+1570452819,,ui,message,    amazon-ebs: Get:6 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [751 kB]
+1570452819,,ui,message,    amazon-ebs: Get:7 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main Translation-en [270 kB]
+1570452819,,ui,message,    amazon-ebs: Get:8 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1010 kB]
+1570452819,,ui,message,    amazon-ebs: Get:9 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe Translation-en [311 kB]
+1570452820,,ui,message,    amazon-ebs: Get:10 http://ppa.launchpad.net/ansible/ansible/ubuntu bionic/main amd64 Packages [528 B]
+1570452820,,ui,message,    amazon-ebs: Get:11 http://ppa.launchpad.net/ansible/ansible/ubuntu bionic/main Translation-en [344 B]
+1570452820,,ui,message,    amazon-ebs: Get:12 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [527 kB]
+1570452820,,ui,message,    amazon-ebs: Get:13 http://security.ubuntu.com/ubuntu bionic-security/main Translation-en [176 kB]
+1570452820,,ui,message,    amazon-ebs: Get:14 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [611 kB]
+1570452820,,ui,message,    amazon-ebs: Get:15 http://security.ubuntu.com/ubuntu bionic-security/universe Translation-en [204 kB]
+1570452823,,ui,message,    amazon-ebs: Fetched 4128 kB in 1s (2942 kB/s)
+1570452824,,ui,message,    amazon-ebs: Reading package lists...
+1570452824,,ui,message,    amazon-ebs: Hit:1 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+1570452824,,ui,message,    amazon-ebs: Hit:2 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease
+1570452824,,ui,message,    amazon-ebs: Get:3 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+1570452824,,ui,message,    amazon-ebs: Hit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease
+1570452824,,ui,message,    amazon-ebs: Hit:5 http://ppa.launchpad.net/ansible/ansible/ubuntu bionic InRelease
+1570452824,,ui,message,    amazon-ebs: Fetched 74.6 kB in 0s (189 kB/s)
+1570452825,,ui,message,    amazon-ebs: Reading package lists...
+1570452825,,ui,message,    amazon-ebs: Reading package lists...
+1570452826,,ui,message,    amazon-ebs: Building dependency tree...
+1570452826,,ui,message,    amazon-ebs: Reading state information...
+1570452826,,ui,message,    amazon-ebs: The following additional packages will be installed:
+1570452826,,ui,message,    amazon-ebs:   python-httplib2 python-jinja2 python-markupsafe python-paramiko
+1570452826,,ui,message,    amazon-ebs:   python-pyasn1 python-yaml sshpass
+1570452826,,ui,message,    amazon-ebs: Suggested packages:
+1570452826,,ui,message,    amazon-ebs:   python-jinja2-doc python-gssapi
+1570452826,,ui,message,    amazon-ebs: The following NEW packages will be installed:
+1570452826,,ui,message,    amazon-ebs:   ansible python-httplib2 python-jinja2 python-markupsafe python-paramiko
+1570452826,,ui,message,    amazon-ebs:   python-pyasn1 python-yaml sshpass
+1570452826,,ui,message,    amazon-ebs: 0 upgraded%!(PACKER_COMMA) 8 newly installed%!(PACKER_COMMA) 0 to remove and 0 not upgraded.
+1570452826,,ui,message,    amazon-ebs: Need to get 5579 kB of archives.
+1570452826,,ui,message,    amazon-ebs: After this operation%!(PACKER_COMMA) 50.4 MB of additional disk space will be used.
+1570452826,,ui,message,    amazon-ebs: Get:1 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-markupsafe amd64 1.0-1build1 [13.0 kB]
+1570452826,,ui,message,    amazon-ebs: Get:2 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-jinja2 all 2.10-1ubuntu0.18.04.1 [94.8 kB]
+1570452826,,ui,message,    amazon-ebs: Get:3 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-yaml amd64 3.12-1build2 [115 kB]
+1570452826,,ui,message,    amazon-ebs: Get:4 http://ppa.launchpad.net/ansible/ansible/ubuntu bionic/main amd64 ansible all 2.8.5-1ppa~bionic [5153 kB]
+1570452826,,ui,message,    amazon-ebs: Get:5 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-pyasn1 all 0.4.2-3 [46.7 kB]
+1570452826,,ui,message,    amazon-ebs: Get:6 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-paramiko all 2.0.0-1ubuntu1.2 [110 kB]
+1570452826,,ui,message,    amazon-ebs: Get:7 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-httplib2 all 0.9.2+dfsg-1ubuntu0.1 [34.7 kB]
+1570452826,,ui,message,    amazon-ebs: Get:8 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 sshpass amd64 1.06-1 [10.5 kB]
+1570452826,,ui,error,==> amazon-ebs: debconf: unable to initialize frontend: Dialog
+1570452826,,ui,error,==> amazon-ebs: debconf: (Dialog frontend will not work on a dumb terminal%!(PACKER_COMMA) an emacs shell buffer%!(PACKER_COMMA) or without a controlling terminal.)
+1570452826,,ui,error,==> amazon-ebs: debconf: falling back to frontend: Readline
+1570452826,,ui,error,==> amazon-ebs: debconf: unable to initialize frontend: Readline
+1570452826,,ui,error,==> amazon-ebs: debconf: (This frontend requires a controlling tty.)
+1570452826,,ui,error,==> amazon-ebs: debconf: falling back to frontend: Teletype
+1570452826,,ui,error,==> amazon-ebs: dpkg-preconfigure: unable to re-open stdin:
+1570452826,,ui,message,    amazon-ebs: Fetched 5579 kB in 0s (34.9 MB/s)
+1570452826,,ui,message,    amazon-ebs: Selecting previously unselected package python-markupsafe.
+1570452827,,ui,message,    amazon-ebs: (Reading database ... 84864 files and directories currently installed.)
+1570452827,,ui,message,    amazon-ebs: Preparing to unpack .../0-python-markupsafe_1.0-1build1_amd64.deb ...
+1570452827,,ui,message,    amazon-ebs: Unpacking python-markupsafe (1.0-1build1) ...
+1570452827,,ui,message,    amazon-ebs: Selecting previously unselected package python-jinja2.
+1570452827,,ui,message,    amazon-ebs: Preparing to unpack .../1-python-jinja2_2.10-1ubuntu0.18.04.1_all.deb ...
+1570452827,,ui,message,    amazon-ebs: Unpacking python-jinja2 (2.10-1ubuntu0.18.04.1) ...
+1570452827,,ui,message,    amazon-ebs: Selecting previously unselected package python-yaml.
+1570452827,,ui,message,    amazon-ebs: Preparing to unpack .../2-python-yaml_3.12-1build2_amd64.deb ...
+1570452827,,ui,message,    amazon-ebs: Unpacking python-yaml (3.12-1build2) ...
+1570452827,,ui,message,    amazon-ebs: Selecting previously unselected package python-pyasn1.
+1570452827,,ui,message,    amazon-ebs: Preparing to unpack .../3-python-pyasn1_0.4.2-3_all.deb ...
+1570452827,,ui,message,    amazon-ebs: Unpacking python-pyasn1 (0.4.2-3) ...
+1570452827,,ui,message,    amazon-ebs: Selecting previously unselected package python-paramiko.
+1570452827,,ui,message,    amazon-ebs: Preparing to unpack .../4-python-paramiko_2.0.0-1ubuntu1.2_all.deb ...
+1570452827,,ui,message,    amazon-ebs: Unpacking python-paramiko (2.0.0-1ubuntu1.2) ...
+1570452828,,ui,message,    amazon-ebs: Selecting previously unselected package python-httplib2.
+1570452828,,ui,message,    amazon-ebs: Preparing to unpack .../5-python-httplib2_0.9.2+dfsg-1ubuntu0.1_all.deb ...
+1570452828,,ui,message,    amazon-ebs: Unpacking python-httplib2 (0.9.2+dfsg-1ubuntu0.1) ...
+1570452828,,ui,message,    amazon-ebs: Selecting previously unselected package sshpass.
+1570452828,,ui,message,    amazon-ebs: Preparing to unpack .../6-sshpass_1.06-1_amd64.deb ...
+1570452828,,ui,message,    amazon-ebs: Unpacking sshpass (1.06-1) ...
+1570452828,,ui,message,    amazon-ebs: Selecting previously unselected package ansible.
+1570452828,,ui,message,    amazon-ebs: Preparing to unpack .../7-ansible_2.8.5-1ppa~bionic_all.deb ...
+1570452828,,ui,message,    amazon-ebs: Unpacking ansible (2.8.5-1ppa~bionic) ...
+1570452829,,ui,message,    amazon-ebs: Setting up python-yaml (3.12-1build2) ...
+1570452830,,ui,message,    amazon-ebs: Setting up python-pyasn1 (0.4.2-3) ...
+1570452830,,ui,message,    amazon-ebs: Setting up python-markupsafe (1.0-1build1) ...
+1570452830,,ui,message,    amazon-ebs: Setting up python-httplib2 (0.9.2+dfsg-1ubuntu0.1) ...
+1570452830,,ui,message,    amazon-ebs: Setting up python-paramiko (2.0.0-1ubuntu1.2) ...
+1570452830,,ui,message,    amazon-ebs: Setting up sshpass (1.06-1) ...
+1570452830,,ui,message,    amazon-ebs: Setting up python-jinja2 (2.10-1ubuntu0.18.04.1) ...
+1570452830,,ui,message,    amazon-ebs: Setting up ansible (2.8.5-1ppa~bionic) ...
+1570452835,,ui,message,    amazon-ebs: Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+1570452837,,ui,say,==> amazon-ebs: Provisioning with Ansible...
+1570452838,,ui,say,==> amazon-ebs: Executing Ansible: ansible-playbook --extra-vars packer_build_name=amazon-ebs packer_builder_type=amazon-ebs -o IdentitiesOnly=yes -i /var/folders/fz/cfw_yvv52lq955y6bn8bdbc00000gn/T/packer-provisioner-ansible935241650 /Users/yomiogunyinka/aws/organisations/jagho-jcs/jenkins/bld-ec2-images-with-packer-and-ansible/packer-ansible-aws/packer/provisioners/ansible/setup-server.yml -e ansible_ssh_private_key_file=/var/folders/fz/cfw_yvv52lq955y6bn8bdbc00000gn/T/ansible-key229597151
+1570452838,,ui,message,    amazon-ebs:  ___________________________________
+1570452838,,ui,message,    amazon-ebs: < PLAY [Tomcat deployment playbook] >
+1570452838,,ui,message,    amazon-ebs:  -----------------------------------
+1570452838,,ui,message,    amazon-ebs:         \   ^__^
+1570452838,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452838,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452838,,ui,message,    amazon-ebs:                 ||----w |
+1570452838,,ui,message,    amazon-ebs:                 ||     ||
+1570452838,,ui,message,    amazon-ebs:
+1570452838,,ui,message,    amazon-ebs:  ________________________
+1570452838,,ui,message,    amazon-ebs: < TASK [Gathering Facts] >
+1570452838,,ui,message,    amazon-ebs:  ------------------------
+1570452838,,ui,message,    amazon-ebs:         \   ^__^
+1570452838,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452838,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452838,,ui,message,    amazon-ebs:                 ||----w |
+1570452838,,ui,message,    amazon-ebs:                 ||     ||
+1570452838,,ui,message,    amazon-ebs:
+1570452841,,ui,message,    amazon-ebs: ok: [default]
+1570452841,,ui,message,    amazon-ebs:  ________________________________________
+1570452841,,ui,message,    amazon-ebs: < TASK [Update and upgrade apt packages] >
+1570452841,,ui,message,    amazon-ebs:  ----------------------------------------
+1570452841,,ui,message,    amazon-ebs:         \   ^__^
+1570452841,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452841,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452841,,ui,message,    amazon-ebs:                 ||----w |
+1570452841,,ui,message,    amazon-ebs:                 ||     ||
+1570452841,,ui,message,    amazon-ebs:
+1570452847,,ui,message,    amazon-ebs:  [WARNING]: Could not find aptitude. Using apt-get instead.
+1570452847,,ui,message,    amazon-ebs: ok: [default]
+1570452847,,ui,message,    amazon-ebs:  _______________________
+1570452847,,ui,message,    amazon-ebs: < TASK [install JDK 11] >
+1570452847,,ui,message,    amazon-ebs:  -----------------------
+1570452847,,ui,message,    amazon-ebs:         \   ^__^
+1570452847,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452847,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452847,,ui,message,    amazon-ebs:                 ||----w |
+1570452847,,ui,message,    amazon-ebs:                 ||     ||
+1570452847,,ui,message,    amazon-ebs:
+1570452872,,ui,message,    amazon-ebs: changed: [default]
+1570452872,,ui,message,    amazon-ebs:  _________________________
+1570452872,,ui,message,    amazon-ebs: < TASK [add tomcat group] >
+1570452872,,ui,message,    amazon-ebs:  -------------------------
+1570452872,,ui,message,    amazon-ebs:         \   ^__^
+1570452872,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452872,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452872,,ui,message,    amazon-ebs:                 ||----w |
+1570452872,,ui,message,    amazon-ebs:                 ||     ||
+1570452872,,ui,message,    amazon-ebs:
+1570452873,,ui,message,    amazon-ebs: changed: [default]
+1570452873,,ui,message,    amazon-ebs:  ________________________
+1570452873,,ui,message,    amazon-ebs: < TASK [add tomcat user] >
+1570452873,,ui,message,    amazon-ebs:  ------------------------
+1570452873,,ui,message,    amazon-ebs:         \   ^__^
+1570452873,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452873,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452873,,ui,message,    amazon-ebs:                 ||----w |
+1570452873,,ui,message,    amazon-ebs:                 ||     ||
+1570452873,,ui,message,    amazon-ebs:
+1570452875,,ui,message,    amazon-ebs: changed: [default]
+1570452875,,ui,message,    amazon-ebs:  ____________________________________________
+1570452875,,ui,message,    amazon-ebs: < TASK [create /usr/share/ tomcat directory] >
+1570452875,,ui,message,    amazon-ebs:  --------------------------------------------
+1570452875,,ui,message,    amazon-ebs:         \   ^__^
+1570452875,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452875,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452875,,ui,message,    amazon-ebs:                 ||----w |
+1570452875,,ui,message,    amazon-ebs:                 ||     ||
+1570452875,,ui,message,    amazon-ebs:
+1570452877,,ui,message,    amazon-ebs: changed: [default]
+1570452877,,ui,message,    amazon-ebs:  ________________________
+1570452877,,ui,message,    amazon-ebs: < TASK [Download Tomcat] >
+1570452877,,ui,message,    amazon-ebs:  ------------------------
+1570452877,,ui,message,    amazon-ebs:         \   ^__^
+1570452877,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452877,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452877,,ui,message,    amazon-ebs:                 ||----w |
+1570452877,,ui,message,    amazon-ebs:                 ||     ||
+1570452877,,ui,message,    amazon-ebs:
+1570452879,,ui,message,    amazon-ebs: changed: [default]
+1570452879,,ui,message,    amazon-ebs:  ________________________
+1570452879,,ui,message,    amazon-ebs: < TASK [Extract archive] >
+1570452879,,ui,message,    amazon-ebs:  ------------------------
+1570452879,,ui,message,    amazon-ebs:         \   ^__^
+1570452879,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452879,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452879,,ui,message,    amazon-ebs:                 ||----w |
+1570452879,,ui,message,    amazon-ebs:                 ||     ||
+1570452879,,ui,message,    amazon-ebs:
+1570452882,,ui,message,    amazon-ebs: changed: [default]
+1570452882,,ui,message,    amazon-ebs:  _________________________________________________
+1570452882,,ui,message,    amazon-ebs: < TASK [Copy Tomcat service from local to remote] >
+1570452882,,ui,message,    amazon-ebs:  -------------------------------------------------
+1570452882,,ui,message,    amazon-ebs:         \   ^__^
+1570452882,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452882,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452882,,ui,message,    amazon-ebs:                 ||----w |
+1570452882,,ui,message,    amazon-ebs:                 ||     ||
+1570452882,,ui,message,    amazon-ebs:
+1570452884,,ui,message,    amazon-ebs: changed: [default]
+1570452885,,ui,message,    amazon-ebs:  ________________________________________
+1570452885,,ui,message,    amazon-ebs: < TASK [Start and enable Tomcat service] >
+1570452885,,ui,message,    amazon-ebs:  ----------------------------------------
+1570452885,,ui,message,    amazon-ebs:         \   ^__^
+1570452885,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452885,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452885,,ui,message,    amazon-ebs:                 ||----w |
+1570452885,,ui,message,    amazon-ebs:                 ||     ||
+1570452885,,ui,message,    amazon-ebs:
+1570452887,,ui,message,    amazon-ebs: changed: [default]
+1570452887,,ui,message,    amazon-ebs:  ____________
+1570452887,,ui,message,    amazon-ebs: < PLAY RECAP >
+1570452887,,ui,message,    amazon-ebs:  ------------
+1570452887,,ui,message,    amazon-ebs:         \   ^__^
+1570452887,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452887,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452887,,ui,message,    amazon-ebs:                 ||----w |
+1570452887,,ui,message,    amazon-ebs:                 ||     ||
+1570452887,,ui,message,    amazon-ebs:
+1570452887,,ui,message,    amazon-ebs: default                    : ok=10   changed=8    unreachable=0    failed=0
+1570452887,,ui,message,    amazon-ebs:
+1570452887,,ui,say,==> amazon-ebs: Provisioning with Ansible...
+1570452887,,ui,say,==> amazon-ebs: Executing Ansible: ansible-playbook --extra-vars packer_build_name=amazon-ebs packer_builder_type=amazon-ebs -o IdentitiesOnly=yes -i /var/folders/fz/cfw_yvv52lq955y6bn8bdbc00000gn/T/packer-provisioner-ansible477042174 /Users/yomiogunyinka/aws/organisations/jagho-jcs/jenkins/bld-ec2-images-with-packer-and-ansible/packer-ansible-aws/packer/provisioners/ansible/deploy_app.yml -e ansible_ssh_private_key_file=/var/folders/fz/cfw_yvv52lq955y6bn8bdbc00000gn/T/ansible-key090077787
+1570452888,,ui,message,    amazon-ebs:  ______________________________________
+1570452888,,ui,message,    amazon-ebs: < PLAY [Deploy tomcat war application] >
+1570452888,,ui,message,    amazon-ebs:  --------------------------------------
+1570452888,,ui,message,    amazon-ebs:         \   ^__^
+1570452888,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452888,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452888,,ui,message,    amazon-ebs:                 ||----w |
+1570452888,,ui,message,    amazon-ebs:                 ||     ||
+1570452888,,ui,message,    amazon-ebs:
+1570452888,,ui,message,    amazon-ebs:  ________________________
+1570452888,,ui,message,    amazon-ebs: < TASK [Gathering Facts] >
+1570452888,,ui,message,    amazon-ebs:  ------------------------
+1570452888,,ui,message,    amazon-ebs:         \   ^__^
+1570452888,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452888,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452888,,ui,message,    amazon-ebs:                 ||----w |
+1570452888,,ui,message,    amazon-ebs:                 ||     ||
+1570452888,,ui,message,    amazon-ebs:
+1570452890,,ui,message,    amazon-ebs: ok: [default]
+1570452890,,ui,message,    amazon-ebs:  __________________________________
+1570452890,,ui,message,    amazon-ebs: < TASK [Deploy war file to tomcat] >
+1570452890,,ui,message,    amazon-ebs:  ----------------------------------
+1570452890,,ui,message,    amazon-ebs:         \   ^__^
+1570452890,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452890,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452890,,ui,message,    amazon-ebs:                 ||----w |
+1570452890,,ui,message,    amazon-ebs:                 ||     ||
+1570452890,,ui,message,    amazon-ebs:
+1570452893,,ui,message,    amazon-ebs: changed: [default]
+1570452893,,ui,message,    amazon-ebs:  __________________________________
+1570452893,,ui,message,    amazon-ebs: < RUNNING HANDLER [restart tomcat] >
+1570452893,,ui,message,    amazon-ebs:  ----------------------------------
+1570452893,,ui,message,    amazon-ebs:         \   ^__^
+1570452893,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452893,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452893,,ui,message,    amazon-ebs:                 ||----w |
+1570452893,,ui,message,    amazon-ebs:                 ||     ||
+1570452893,,ui,message,    amazon-ebs:
+1570452895,,ui,message,    amazon-ebs: changed: [default]
+1570452895,,ui,message,    amazon-ebs:  ____________
+1570452895,,ui,message,    amazon-ebs: < PLAY RECAP >
+1570452895,,ui,message,    amazon-ebs:  ------------
+1570452895,,ui,message,    amazon-ebs:         \   ^__^
+1570452895,,ui,message,    amazon-ebs:          \  (oo)\_______
+1570452895,,ui,message,    amazon-ebs:             (__)\       )\/\
+1570452895,,ui,message,    amazon-ebs:                 ||----w |
+1570452895,,ui,message,    amazon-ebs:                 ||     ||
+1570452895,,ui,message,    amazon-ebs:
+1570452895,,ui,message,    amazon-ebs: default                    : ok=3    changed=2    unreachable=0    failed=0
+1570452895,,ui,message,    amazon-ebs:
+1570452895,,ui,say,==> amazon-ebs: Stopping the source instance...
+1570452895,,ui,message,    amazon-ebs: Stopping instance
+1570452895,,ui,say,==> amazon-ebs: Waiting for the instance to stop...
+1570452926,,ui,say,==> amazon-ebs: Creating AMI ubuntugolden-image-2019-10-07T1252 from instance i-094d3997e880ea367
+1570452927,,ui,message,    amazon-ebs: AMI: ami-0201da6fcc88dd20a
+1570452927,,ui,say,==> amazon-ebs: Waiting for AMI to become ready...
+1570453036,,ui,say,==> amazon-ebs: Modifying attributes on AMI (ami-0201da6fcc88dd20a)...
+1570453036,,ui,message,    amazon-ebs: Modifying: description
+1570453036,,ui,say,==> amazon-ebs: Modifying attributes on snapshot (snap-0cb9545a4c612d870)...
+1570453036,,ui,say,==> amazon-ebs: Adding tags to AMI (ami-0201da6fcc88dd20a)...
+1570453037,,ui,say,==> amazon-ebs: Tagging snapshot: snap-0cb9545a4c612d870
+1570453037,,ui,say,==> amazon-ebs: Creating AMI tags
+1570453037,,ui,message,    amazon-ebs: Adding tag: "Name": "ubuntu golden-image"
+1570453037,,ui,message,    amazon-ebs: Adding tag: "InUse": "Yes"
+1570453037,,ui,message,    amazon-ebs: Adding tag: "CreatedBy": "Packer"
+1570453037,,ui,message,    amazon-ebs: Adding tag: "WebApp": "ubuntu"
+1570453037,,ui,message,    amazon-ebs: Adding tag: "Role": "golden-image"
+1570453037,,ui,say,==> amazon-ebs: Creating snapshot tags
+1570453037,,ui,say,==> amazon-ebs: Terminating the source AWS instance...
+1570453054,,ui,say,==> amazon-ebs: Cleaning up any extra volumes...
+1570453054,,ui,say,==> amazon-ebs: No volumes to clean up%!(PACKER_COMMA) skipping
+1570453054,,ui,say,==> amazon-ebs: Deleting temporary security group...
+1570453055,,ui,say,==> amazon-ebs: Deleting temporary keypair...
+1570453055,,ui,say,Build 'amazon-ebs' finished.
+1570453055,,ui,say,\n==> Builds finished. The artifacts of successful builds are:
+1570453055,amazon-ebs,artifact-count,1
+1570453055,amazon-ebs,artifact,0,builder-id,mitchellh.amazonebs
+1570453055,amazon-ebs,artifact,0,id,eu-west-1:ami-0201da6fcc88dd20a
+1570453055,amazon-ebs,artifact,0,string,AMIs were created:\neu-west-1: ami-0201da6fcc88dd20a\n
+1570453055,amazon-ebs,artifact,0,files-count,0
+1570453055,amazon-ebs,artifact,0,end
+1570453055,,ui,say,--> amazon-ebs: AMIs were created:\neu-west-1: ami-0201da6fcc88dd20a\n

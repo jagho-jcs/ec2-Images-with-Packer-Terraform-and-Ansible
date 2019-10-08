@@ -1,0 +1,19 @@
+---
+- name: Deploy tomcat war application
+  hosts: 'all'
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Deploy war file to tomcat
+      copy:
+        src: files/sample.war
+        dest: /usr/share/tomcat/webapps/sample.war
+        owner: tomcat
+        mode: 0644
+      notify: restart tomcat
+
+  handlers:
+    - name: restart tomcat
+      service:
+        name: tomcat
+        state: restarted

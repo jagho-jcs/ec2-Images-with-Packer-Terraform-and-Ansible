@@ -1,0 +1,69 @@
+{
+  "_comment" : "Simple Packer Template using Ubuntu 16.04 most recent",
+  "variables": {
+    
+    "ssh_username": "jagho-demo",
+
+    "web_app": "ubuntu",
+    "in_use": "Yes",
+    "role": "jcs-tomcat-ami",
+
+    "region": "eu-west-1",
+
+    "instance_type": "t2.micro",
+
+    "source_ami": "ami-0ed5b458acc1b64de",
+
+    "ami_description": "Ubuntu 18.04 most recent",
+    "vpc_id": "",
+    "subnet_id": "",
+    "security_group_id": ""
+    
+  },
+  "_comment" : "This will pull the most recent Ubuntu 18.04 version!..",
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "region": "{{user `region`}}",
+
+      "source_ami": "{{ user `source_ami` }}",
+      "instance_type": "{{user `instance_type`}}",
+      "ssh_username": "{{user `ssh_username`}}",
+      "ami_name": "{{user `web_app`}}{{user `role`}}-{{isotime \"2006-01-02T1504\"}}",
+      "tags": {
+        
+        "Name": "{{user `web_app`}} {{user `role`}}",
+        "InUse": "{{user `in_use`}}",
+        "CreatedBy": "Packer",
+        "WebApp": "{{user `web_app`}}",
+        "Role": "{{user `role`}}"
+      
+      },
+      
+      "vpc_id": "{{user `vpc_id`}}",
+      "subnet_id": "{{user `subnet_id`}}",
+      "security_group_id": "{{user `security_group_id`}}",
+      "associate_public_ip_address": "true",
+    
+      "ami_description": "{{user `ami_description`}}"
+    }
+  ],
+ "provisioners": [
+    {
+      "type": "shell",
+      "inline": "while [ ! -f /var/lib/cloud/instance/boot-finished ]; do echo 'Waiting for cloud-init...'; sleep 1; done"
+    },
+    {
+      "type": "shell",
+      "script": "./provisioners/scripts/bootstrap.sh"
+    },
+    {
+      "type": "ansible",
+      "playbook_file": "./provisioners/ansible/setup-server.yml"
+    },
+    {
+      "type": "ansible",
+      "playbook_file": "./provisioners/ansible/deploy_app.yml"
+    }
+  ]
+}
