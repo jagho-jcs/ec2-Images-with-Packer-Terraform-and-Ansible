@@ -3,9 +3,6 @@
 provider "aws" {
   version = "~> 2.7"
 
-  shared_credentials_file = "/../../.aws/credentials"
-  profile                 = "dev-jcs"
-  region                  = "eu-west-1"
 }
 
 # Create EC2 Test instance
