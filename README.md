@@ -1,4 +1,4 @@
-# Build AWS EC2 Machine Images (AMI) With Packer, Terraform and Ansible
+# Building AWS EC2 Machine Images (AMI's) using Packer, Terraform and Ansible
 
 This project builds an AMI using `Packer`, `Terraform`, and `Ansible` to install a simple Java Web Application and its dependencies.
 
